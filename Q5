@@ -1,0 +1,17 @@
+function avaliarAluno(nota1, nota2) {
+    // Calcula a média aritmética simples
+    let media = (nota1 + nota2) / 2;
+    console.log(`Média do aluno: ${media.toFixed(1)}`);
+
+    // Avalia o desempenho com base nas faixas de notas estipuladas
+    if (media === 10) {
+        console.log("Desempenho Excelente!");
+        console.log("Situação: Aprovado");
+    } else if (media >= 7) {
+        console.log("Situação: Aprovado");
+    } else if (media >= 5 && media < 7) {
+        console.log("Situação: Recuperação");
+    } else {
+        console.log("Situação: Reprovado");
+    }
+}
