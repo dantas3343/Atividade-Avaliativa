@@ -1,0 +1,23 @@
+function sistemaLogin(tentativas) {
+    const senhaCorreta = "1234";
+    let tentativasRestantes = 3;
+
+    // Percorre as senhas fornecidas para simular as tentativas de login
+    for (let i = 0; i < tentativas.length; i++) {
+        let senhaDigitada = tentativas[i];
+
+        if (senhaDigitada === senhaCorreta) {
+            console.log("Acesso permitido");
+            return; // Encerra a execução caso a senha esteja correta
+        } else {
+            tentativasRestantes--; // Reduz o número de tentativas
+            
+            if (tentativasRestantes > 0) {
+                console.log(`Senha incorreta. Tentativas restantes: ${tentativasRestantes}`);
+            } else {
+                console.log("Acesso bloqueado");
+                return; // Encerra a execução ao zerar as tentativas
+            }
+        }
+    }
+}
