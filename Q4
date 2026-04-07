@@ -1,0 +1,17 @@
+function simularCompra(produto, preco, estoque, quantidadeDesejada) {
+    // Valida se o estoque consegue suprir a quantidade desejada
+    if (quantidadeDesejada > estoque) {
+        console.log(`Erro: Sem estoque suficiente para ${produto}. Estoque disponível: ${estoque}.`);
+        return; // Interrompe a compra
+    }
+
+    let valorTotal = preco * quantidadeDesejada;
+
+    // Verifica se a compra atingiu o valor mínimo para desconto
+    if (valorTotal > 500) {
+        valorTotal = valorTotal * 0.95; // Aplica 5% de desconto
+        console.log("Desconto de 5% aplicado pelo alto volume de compra!");
+    }
+
+    console.log(`Compra aprovada! ${quantidadeDesejada}x ${produto}. Valor a pagar: R$ ${valorTotal.toFixed(2)}`);
+}
