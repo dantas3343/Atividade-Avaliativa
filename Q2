@@ -1,0 +1,22 @@
+function classificarNumero(numero) {
+    let sinal = "";
+    let paridade = "";
+
+    // Verifica se o número é maior, menor ou igual a zero
+    if (numero === 0) {
+        sinal = "zero (neutro)";
+    } else if (numero > 0) {
+        sinal = "positivo";
+    } else {
+        sinal = "negativo";
+    }
+
+    // Utiliza o operador de módulo (%) para verificar o resto da divisão por 2
+    if (numero % 2 === 0) {
+        paridade = "par";
+    } else {
+        paridade = "ímpar";
+    }
+
+    console.log(`O número ${numero} é ${sinal} e ${paridade}.`);
+}
