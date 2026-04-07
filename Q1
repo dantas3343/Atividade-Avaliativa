@@ -1,0 +1,19 @@
+function calcularDesconto(nome, preco, quantidade) {
+    let precoTotal = preco * quantidade;
+    let desconto = 0;
+
+    // A lógica avalia primeiro a condição maior (> 20) para garantir o desconto correto
+    if (quantidade > 20) {
+        desconto = 0.20; // 20% de desconto
+    } else if (quantidade > 10) {
+        desconto = 0.10; // 10% de desconto
+    }
+
+    // Subtrai o valor do desconto do preço total
+    let precoFinal = precoTotal - (precoTotal * desconto);
+
+    // Exibe as informações finais
+    console.log(`Produto: ${nome}`);
+    console.log(`Quantidade: ${quantidade}`);
+    console.log(`Preço Final: R$ ${precoFinal.toFixed(2)}`);
+}
